@@ -21,7 +21,7 @@ This is a task management application built with React. It allows users to add t
 To run the project locally, follow these steps:<br><br>
 	1.	Clone the repository: <br>
  
-    git clone https://github.com/your-username/task-management-app.git
+    git clone https://github.com/your-username/ToDoList-ReactJS.git
 
  <br>
  	2.	Navigate to the project directory:<br><br>
