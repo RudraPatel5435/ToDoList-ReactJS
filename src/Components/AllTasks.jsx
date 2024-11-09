@@ -14,6 +14,25 @@ const AllTasks = ({taskList, setTaskList}) => {
         })
         setTaskList(updatedTaskList)
     }
+
+    const handleDelete = (index)=>{
+        const updatedTaskList = taskList.map((task, i)=>{
+            if(i == index){
+                if (!task.checked){
+                    const ans = window.confirm("The task is not completed. Are you sure you want to delete it ?")
+                    if (ans){
+                        return {...task, deleted: true}
+                    }
+                }
+                else {
+                    return {...task, deleted: true}
+                }
+            }
+            return task
+        })
+        setTaskList(updatedTaskList)
+    }
+
   return (
     <div id='alltasks' className='w-full max-h-[357px] mt-3 overflow-y-scroll'>
       {taskList.map((task, index) => {
@@ -26,7 +45,7 @@ const AllTasks = ({taskList, setTaskList}) => {
               </div>
               <div className="flex ">
                 <RiEditBoxLine size={25} color='#c4b49b' className='cursor-pointer' />
-                <RiDeleteBinLine size={25} color='#c4b49b' className='cursor-pointer' />
+                <RiDeleteBinLine onClick={() => handleDelete(index)} size={25} color='#c4b49b' className='cursor-pointer' />
               </div>
             </div>
           )
