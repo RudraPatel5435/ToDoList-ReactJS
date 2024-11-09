@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TaskNumber = ({taskList}) => {
-    const completedTasks = taskList.filter((task) => task.checked === true)
+    const completedTasks = taskList.filter((task) => task.checked === true && task.deleted === false)
     const totalTasks = taskList.filter((task) => task.deleted === false)
 
   return (
