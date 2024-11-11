@@ -55,7 +55,7 @@ const AllTasks = ({taskList, setTaskList}) => {
     }
 
   return (
-    <div className='ml-10'>
+    <div className='ml-[200px]'>
          <div className='flex items-center justify-center'>
             <input type="text" onChange={(e)=>setEditingTaskName(e.target.value)} value={editingTaskName} placeholder='Edit Task (Click Edit Button)' className='rounded-lg px-4 py-1 w-[290px] text-lg outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
             <h4 onClick={saveEditedTask} className='h-9 ml-5 bg-[#4caf50] text-[#1f2937] text-xl rounded px-2 py-1 cursor-pointer font-semibold'>Save</h4> 
