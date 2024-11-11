@@ -15,9 +15,9 @@ const App = () => {
         <TaskNumber taskList={taskList}/>
         <AddTask taskList={taskList} setTaskList={setTaskList} />
       </div>
-      <div className="flex justify-start items-start">
-      <AllTasks taskList={taskList} setTaskList={setTaskList} />
+      <div className="flex justify-start items-start mt-10 gap-16">
       <AddOns taskList={taskList} setTaskList={setTaskList} />
+      <AllTasks taskList={taskList} setTaskList={setTaskList} />
       </div>
     </div>
   )

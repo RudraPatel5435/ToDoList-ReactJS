@@ -7,11 +7,11 @@ const AddTask = ({taskList, setTaskList}) => {
     const [tags, setTags] = useState('')
 
     const addTask = () => {
-        if (task.trim() === "") return
+        if (name.trim() === "") return
         const newTask = {
-            name: task,
+            name: name,
             category: category,
-            tags: [],
+            tags: tags.split(",").map(tag=>tag.trim()),
             checked: false,
             deleted: false
         }
@@ -25,10 +25,10 @@ const AddTask = ({taskList, setTaskList}) => {
   return (
     <div className='w-[80%] flex items-center justify-between'>
       <div className="flex flex-col items-start justify-start pl-10 gap-5">
-        <input type="text" onChange={(e) => set(e.target.value)} value={name} placeholder='Add Task' className='rounded-lg px-5 py-2 w-[100%] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
+        <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder='Add Task' className='rounded-lg px-5 py-2 w-[100%] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
         <div className="flex items-center justify-between gap-5">
-          <input type="text" onChange={(e) => set(e.target.value)} value={category} placeholder='Add Category' className='rounded-lg px-5 py-2 w-[400px] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
-          <input type="text" onChange={(e) => set(e.target.value)} value={tags} placeholder='Add Tags' className='rounded-lg px-5 py-2 w-[400px] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
+          <input type="text" onChange={(e) => setCategory(e.target.value)} value={category} placeholder='Add Category' className='rounded-lg px-5 py-2 w-[400px] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
+          <input type="text" onChange={(e) => setTags(e.target.value)} value={tags} placeholder='Add Tags' className='rounded-lg px-5 py-2 w-[400px] text-2xl outline-none bg-[#1f2937] text-[#c4b49b] placeholder:text-[#c4b49b]' />
           </div>
       </div>
       <div className="m-10">
