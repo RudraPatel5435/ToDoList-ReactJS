@@ -8,6 +8,7 @@ This is a task management application built with React. It allows users to add t
 -	Edit task names.
 -	Mark tasks as completed.
 -	Delete tasks.
+- Add Category and Tags.
 -	View the number of completed tasks and total tasks.
 
 <h3>Tech Stack</h3>
@@ -35,7 +36,14 @@ Make sure you have Node.js installed. Then run the following command to install 
     npm install
     
 <br>
-	4.	Start the development server:
+4.	Install Tailwind CSS:
+Set up Tailwind CSS using the following commands:<br><br>
+
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+    
+<br>
+	5.	Start the development server:
 After the dependencies are installed, run:<br><br>
 
     npm run dev
