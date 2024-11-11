@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import AddTask from './Components/AddTask'
-import AllTasks from './Components/AllTasks'
-import TaskNumber from './Components/TaskNumber'
+import AddTask from './Components/Header/AddTask'
+import AllTasks from './Components/TasksView/AllTasks'
+import TaskNumber from './Components/Header/TaskNumber'
 import TaskList from './Tasks/TaskList'
-import AddOns from './Components/AddOns'
+import AddOns from './Components/AddsOns/AddOns'
 
 const App = () => {
 
