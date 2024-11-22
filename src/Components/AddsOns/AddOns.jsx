@@ -5,14 +5,19 @@ const AddOns = ({taskList, setTaskList}) => {
   const [selectedTag, setSelectedTag] = useState('')
   const allCategories = Array.from(new Set(taskList.map(task=>task.category)))
   const allTags = Array.from(new Set(taskList.flatMap(task=>task.tags)))
-  const [tempTaskList, setTempTaskList] = useState(taskList)
+  const [allTasks] = useState(taskList)
 
   const filterTasks = () => {
-    const filteredTasks = tempTaskList.filter(task =>
+    const filteredTasks = allTasks.filter(task =>
     (selectedCategory === '' || task.category === selectedCategory) &&
     (selectedTag === '' || task.tags.includes(selectedTag))
     )
     setTaskList(filteredTasks)
+  }
+  const clearFilters = () => {
+    setTaskList(allTasks)
+    setSelectedCategory('')
+    setSelectedTag('')
   }
 
   return (
@@ -35,7 +40,10 @@ const AddOns = ({taskList, setTaskList}) => {
             ))}
         </select>
       </div>
-      <button onClick={filterTasks} className='bg-[#4caf50] text-[#1f2937] text-xl font-bold px-5 py-2 rounded-lg mt-5'>Filter Tasks</button>
+      <div className="flex gap-2">
+        <button onClick={filterTasks} className='bg-[#4caf50] text-[#1f2937] text-xl font-bold px-3 py-2 rounded-lg mt-5'>Filter Tasks</button>
+        <button onClick={clearFilters} className='bg-[#4caf50] text-[#1f2937] text-xl font-bold px-3 py-2 rounded-lg mt-5'>Clear Filters</button>
+      </div>
     </div>
   )
 }
