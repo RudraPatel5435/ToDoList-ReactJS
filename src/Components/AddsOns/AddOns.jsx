@@ -15,7 +15,7 @@ const AddOns = ({taskList, setTaskList}) => {
     setTaskList(filteredTasks)
   }
   const clearFilters = () => {
-    setTaskList(JSON.parse(localStorage.getItem('taskList')) || [])
+    setTaskList(allTasks)
     setSelectedCategory('')
     setSelectedTag('')
   }

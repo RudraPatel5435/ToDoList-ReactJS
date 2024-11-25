@@ -7,14 +7,7 @@ import AddOns from './Components/AddsOns/AddOns'
 
 const App = () => {
 
-  const [taskList, setTaskList] = useState(()=>{
-    const savedTasks = localStorage.getItem('taskList')
-    return savedTasks ? JSON.parse(savedTasks): TaskList
-  })
-
-  useEffect(()=>{
-    localStorage.setItem('taskList', JSON.stringify(taskList))
-  }, [taskList])
+  const [taskList, setTaskList] = useState(TaskList)
 
   return (
     <div className='flex items-start justify-start flex-col w-full h-full p-10'>
